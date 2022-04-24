@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+p {
+  font-size: 20px;
+}
+
+/* background color to overlay the imported photo with dark colour (more contrast) */
+.parent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+/* loading background image. Z-index for pushing background image to the inner layer */
+.parent::before {
+  content: '';
+  background: url('./background/sunset.jpg') ;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.parent .city {
+  text-align: center;
+  padding: 30px ;
+
+}
+
+.parent input {
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #f8f8f8;
+}
+
+/* placeholder text color within search box */
+::placeholder {
+  color: #f8f8f8;
+}
+
+/* justify content within outer container - evenly */
+.outer {
+  max-width: 700px;
+  height: 700px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly
+}
+
+.parent .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  /* width: 100%; */
+  height:fit-content;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255,255,255, 0.2);
+}
+
+/* weather description, clouds etc */
+.parent .description {
+  position: relative;
+  font-weight: 800;
+  color: bisque;
+  
+}
+
+.parent .temperature {
+  position: relative;
+  font-size: 80px;
+  font-weight: bold;
+  color: rgb(90, 209, 31);
+  
+}
+
+/* box with feels like temp etc */
+.parent .child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  /* width: 100%; */
+  height: 100%;
+  margin: 100px 10px 10px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(255,255,255, 0.2);
+}
+
+.parent .bottom .feels {
+  margin: 10px 10px 10px 10px
+}
+
+.parent .bottom .humidity {
+  margin: 10px 10px 10px 10px
+}
+
+.parent .bottom .wind {
+  margin: 10px 10px 10px 10px
+}
+
+.bold {
+  font-weight: 700;
+}
